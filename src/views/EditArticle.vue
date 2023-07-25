@@ -23,8 +23,7 @@
                                     @change="addTag" @keypress.enter.prevent="addTag" />
                                 <div class="tag-list"></div>
                             </fieldset>
-                            <button class="btn btn-lg pull-xs-right btn-primary" 
-                                type="submit"
+                            <button class="btn btn-lg pull-xs-right btn-primary" type="submit"
                                 :disabled="!(form.title && form.description && form.body)">
                                 Publish Article
                             </button>
@@ -91,11 +90,12 @@ const onSubmit = async function () {
             return res.data.article
         })
     } else {
-        article = await api.articles.createArticle({ article: form }).then(function (res) {
-            return res.data.article
-        })
+        article = await api.articles.createArticle({ article: form }).then(res => res.data.article)
     }
+    return router.push({ name: 'article', params: { slug: article.slug } })
 }
+
+
 
 </script>
     

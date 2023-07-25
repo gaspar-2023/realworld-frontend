@@ -3,6 +3,8 @@ import { RouterLink, RouterView } from 'vue-router'
 import AppNavigation from './components/AppNavigation.vue'
 import AppFooter from './components/AppFooter.vue'
 
+import { ref } from 'vue'
+
 </script>
 
 <template>
@@ -11,6 +13,4 @@ import AppFooter from './components/AppFooter.vue'
   <AppFooter></AppFooter>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
